@@ -1,0 +1,25 @@
+<template name="cuentaDetalleTpl">
+	<b>{{nombre}} - 
+	Cortable:</b> {{#if indCortable }} Si {{else}} No {{/if}} <b> - 
+	T Vcto: </b>{{tipoVencimiento}}<b> - 
+	T Emisión: </b>{{tipoEmision}}<b> - 
+	F Pago: </b>{{formaPago}}<b><br/>
+	Dom Postal: </b>{{dirPostalId}}
+</template>
+
+<template name="cuentaNombreTpl">
+	{{nombre}}
+</template>
+
+<template name="cuentasListTpl">
+	<div class="col-xs-12 col-sm-12">
+		<h4><b>Cuentas del Cliente</b></h4>
+		<div class="list-group">
+			{{#each cuentasVar}}
+				<a href="{{ pathFor '/cuentas/:id' id=this._id}}" class="list-group-item">{{> cuentaDetalleTpl }}</a>
+			{{/each}}
+		</div>
+	</div>
+	<a href="{{pathFor '/cuentas/cliente/:clienteId/new' clienteId=clienteId }}" class="btn btn-info">Nueva cuenta</a>
+	<a href="{{pathFor '/clientes/:id' id=clienteId }}" class="btn btn-default">> Cliente</a>
+</template>

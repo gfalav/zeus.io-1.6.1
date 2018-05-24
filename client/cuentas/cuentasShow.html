@@ -1,0 +1,13 @@
+<template name="cuentasShowTpl">
+	<div class="col-xs-12 col-sm-12">
+	  {{#autoForm collection="Cuentas" id="showCustonCuentasForm" doc=cuentaVar type="readonly" }}
+
+	  	{{> cuentasFormTpl}}
+
+	  {{/autoForm}}
+	</div>
+	<a href="{{pathFor '/cuentas/:id/edit' id=cuentaVar._id }}" class="btn btn-danger">Edita</a>
+	<a href="{{pathFor '/cuentas/cliente/:id' id=cuentaVar.clienteId }}" class="btn btn-default">Back</a>
+	<a href="{{pathFor '/contratos/cuenta/:cuentaId' cuentaId=cuentaVar._id }}" class="btn btn-primary">Contratos</a>
+
+</template>

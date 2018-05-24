@@ -1,0 +1,12 @@
+<template name="edesalsNewTpl">
+	<div class="col-xs-12 col-sm-12">
+	  	{{#autoForm collection="Edesals" id="insertCustonEdesalsForm" type="method" meteormethod="edesalsNew" }}
+
+	  		{{> edesalsFormTpl}}
+
+	    	<button type="submit" class="btn btn-danger">Enviar</button><a href="{{pathFor 'edesalsListTemplate'}}" class="btn btn-default">Back</a>
+	  	{{/autoForm}}
+
+		
+	</div>
+</template>

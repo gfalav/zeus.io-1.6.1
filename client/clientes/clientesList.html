@@ -1,0 +1,19 @@
+<template name="clientesListTpl">
+	<div class="col-xs-12 col-sm-12">
+		<h4><b>Lista de Clientes</b></h4>
+		<div class="list-group">
+			{{#each clientesVar}}
+				<a href="{{ pathFor '/clientes/:id' id=this._id }}" class="list-group-item">{{> clienteDetalleTpl }}</a>
+			{{/each}}
+		</div>
+	</div>
+	<a href="{{pathFor '/clientes/new'}}" class="btn btn-info">Nuevo Cliente</a>
+</template>
+
+<template name="clienteDetalleTpl">
+	{{#if apellido }}
+		{{apellido}} {{apellido2}}, {{nombres}}
+	{{else}}
+		Información del Cliente
+	{{/if}}
+</template>

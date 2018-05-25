@@ -41,9 +41,4 @@ Template.contratosListTpl.helpers({
 	}
 });
 
-Template.contratosShort.helpers({
-	edesal: function() {
-		return Edesals.findOne({"contratoId": this._id});
-	},
 
-});

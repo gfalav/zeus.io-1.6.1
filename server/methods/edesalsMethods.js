@@ -6,8 +6,6 @@ Meteor.methods({
 			doc.fUM = new Date();
 			doc.fBaja = new Date();
 			doc.usuario = this.userId;
-			var contrato = Contratos.insert({"cuentaId": doc.contratoId, "tipoContrato": "Edesal"});
-			doc.contratoId = contrato;
 			var edesal = Edesals.insert(doc);
 			return edesal;
 		}
